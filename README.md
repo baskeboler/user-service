@@ -1,5 +1,5 @@
 
-# User Service Microservice
+# User Microservice
 [![Java CI with Maven](https://github.com/baskeboler/user-service/actions/workflows/maven.yml/badge.svg)](https://github.com/baskeboler/user-service/actions/workflows/maven.yml)
 
 A RESTful API for managing user accounts, authentication, and profiles, with features like data encryption and audit trails.

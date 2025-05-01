@@ -35,7 +35,9 @@ public class SecurityConfig {
                 )
                 .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(csrf -> csrf
+                        .ignoringRequestMatchers("/authenticate", "/actuator/**") // Exclude specific endpoints if necessary
+                )
                 .httpBasic(AbstractHttpConfigurer::disable);
         return http.build();
     }
